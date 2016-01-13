@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ZMQ_NAME="zeromq-$(cat /app/zmq_version)"
+#ZMQ_NAME="zeromq-$(cat /app/zmq_version)"
 
 echo "---"
 echo "addons:"
