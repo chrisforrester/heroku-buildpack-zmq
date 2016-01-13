@@ -33,8 +33,7 @@ pecho "$ZMQ_NAME detected"
 
 	echo -n "-----> Configuring zmq... "
   		cd $ZMQ_NAME
-		./autogen.sh --silent
-  		./configure --without-libsodium --silent --disable-debug --disable-dependency-tracking --disable-docs
+  		./configure --without-libsodium --silent --disable-debug --disable-dependency-tracking --without-documentation
 	echo "done"
 
 	echo -n "-----> Compiling zmq... "
