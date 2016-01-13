@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
 
-#ZMQ_NAME="zeromq-$(cat $BUILD_DIR/zmq_version)"
-
-#npecho "zmq_name_str :: $ZMQ_NAME_STR"
-#npecho "zmq_name :: $ZMQ_NAME"
-#npecho "$BUILD_DIR/$ZMQ_NAME/lib/pkgconfig"
-
 echo "---"
 echo "addons:"
 echo "config_vars:"
