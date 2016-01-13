@@ -37,8 +37,8 @@ pecho "$ZMQ_NAME detected"
 	echo "done"
 
 	echo -n "-----> Compiling zmq... "
-  		make DESTDIR=$BUILD_PATH/$ZMQ_NAME
-		make install DESTDIR=$BUILD_PATH/$ZMQ_NAME
+  		make DESTDIR=$BUILD_DIR/$ZMQ_NAME
+		make install DESTDIR=$BUILD_DIR/$ZMQ_NAME
 	echo "done"
 #fi
 
