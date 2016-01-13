@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 
-echo "--- {}"
+ZMQ_NAME="zeromq-$(cat $BUILD_DIR/zmq_version)"
+
+echo "---"
+echo "addons:"
+echo "config_vars:"
+echo "  PATH: $PATH:/app/$ZMQ_NAME/lib/pkgconfig"
