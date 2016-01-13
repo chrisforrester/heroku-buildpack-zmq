@@ -10,5 +10,5 @@
 echo "---"
 echo "addons:"
 echo "config_vars:"
-#echo "  PATH: $PATH:$BUILD_DIR/$ZMQ_NAME/lib/pkgconfig"
+echo "  PATH: $PATH:$BUILD_DIR/$ZMQ_NAME/lib/pkgconfig"
 echo "default_process_types:"
