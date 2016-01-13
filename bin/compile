@@ -33,7 +33,7 @@ pecho "$ZMQ_NAME detected"
 
 	echo -n "-----> Configuring zmq... "
   		cd $ZMQ_NAME
-  		./configure --without-libsodium
+  		./configure --without-libsodium --silent --disable-debug --disable-dependency-tracking
 	echo "done"
 
 	echo -n "-----> Compiling zmq... "
