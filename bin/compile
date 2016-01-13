@@ -37,7 +37,7 @@ pecho "$ZMQ_NAME detected"
 	echo "done"
 
 	echo -n "-----> Compiling zmq... "
-  		make DESTDIR=$BUILD_DIR/$ZMQ_NAME
+  		make DESTDIR=$BUILD_DIR/$ZMQ_NAME --silent
 		make install DESTDIR=$BUILD_DIR/$ZMQ_NAME
 	echo "done"
 #fi
@@ -53,7 +53,7 @@ npecho "zeromq built into in $BUILD_DIR/$ZMQ_NAME"
 #cp -rf $CACHE_PATH/$ZMQ_NAME/src/libsodium/.libs/* $BUILD_PATH/lib
 #echo "done"
 
-#npecho "setting zeromq compile flags"
+npecho "setting zeromq compile flags"
 
-#export LDFLAGS=-L$BUILD_DIR/$ZMQ_NAME/$ZMQ_NAME/lib
-#export CPPFLAGS=-I$BUILD_DIR/$ZMQ_NAME/$ZMQ_NAME/include
+export LDFLAGS=-L$BUILD_DIR/$ZMQ_NAME/usr/local/lib
+export CPPFLAGS=-I$BUILD_DIR/$ZMQ_NAME/usr/local//include
