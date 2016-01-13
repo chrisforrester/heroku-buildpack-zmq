@@ -24,16 +24,35 @@ npecho() {
 
 pecho "$ZMQ_NAME detected"
 
-cd $BUILD_DIR
+if [ ! -d $CACHE_PATH/$SODIUM_DIR ];
+then
+	cd $CACHE_PATH
+	echo -n "-----> Fetching zmq from $ZMQ_SOURCE_URL..."
+  		curl -s $ZMQ_SOURCE_URL | tar zxf -
+	echo "done"
 
-mkdir $ZMQ_NAME
+	echo -n "-----> Configuring zmq... "
+  		cd $ZMQ_NAME
+  		./configure --without-libsodium
+	echo "done"
 
-npecho "fetching source from $ZMQ_SOURCE_URL"
-curl -s $ZMQ_SOURCE_URL | tar zxf -
+	echo -n "-----> Compiling zmq... "
+  		make && make install $BUILD_PATH/$ZMQ_NAME
+	echo "done"
+fi
 
-npecho "zeromq  unpacked in $BUILD_DIR/$ZMQ_NAME"
+#cd $BUILD_DIR
 
-npecho "setting zeromq compile flags"
+#mkdir $ZMQ_NAME
 
-export LDFLAGS=-L$BUILD_DIR/$ZMQ_NAME/$ZMQ_NAME/lib
-export CPPFLAGS=-I$BUILD_DIR/$ZMQ_NAME/$ZMQ_NAME/include
+npecho "zeromq built into in $BUILD_DIR/$ZMQ_NAME"
+
+#echo -n "-----> Copying libsodium ($VERSION)... "
+#mkdir -p $BUILD_PATH/lib
+#cp -rf $CACHE_PATH/$ZMQ_NAME/src/libsodium/.libs/* $BUILD_PATH/lib
+#echo "done"
+
+#npecho "setting zeromq compile flags"
+
+#export LDFLAGS=-L$BUILD_DIR/$ZMQ_NAME/$ZMQ_NAME/lib
+#export CPPFLAGS=-I$BUILD_DIR/$ZMQ_NAME/$ZMQ_NAME/include
