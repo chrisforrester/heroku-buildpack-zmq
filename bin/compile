@@ -24,8 +24,8 @@ npecho() {
 
 pecho "$ZMQ_NAME detected"
 
-if [ ! -d $CACHE_PATH/$SODIUM_DIR ];
-then
+#if [ ! -d $CACHE_PATH/$ZMQ_NAME ];
+#then
 	cd $CACHE_PATH
 	echo -n "-----> Fetching zmq from $ZMQ_SOURCE_URL..."
   		curl -s $ZMQ_SOURCE_URL | tar zxf -
@@ -39,7 +39,7 @@ then
 	echo -n "-----> Compiling zmq... "
   		make && make install $BUILD_PATH/$ZMQ_NAME
 	echo "done"
-fi
+#fi
 
 #cd $BUILD_DIR
 
